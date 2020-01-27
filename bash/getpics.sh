@@ -12,7 +12,7 @@
 #make sure we have  a picture directory
 #########################################
 # make a Pictures directory if we don't have one - assumes we have a home directory
-test -d ~/Pictures || mkdir ~/Pictures
+ test -d ~/Pictures || mkdir ~/Pictures
 
 ############################
 # handle the zip files
@@ -24,6 +24,7 @@ test -f ~/Pictures/pics.zip || wget -q -O ~/Pictures/pics.zip http://zonzorp.net
 # unpack the downloaded zipfile if it is there, then delete the local copy of the zipfile
 test -f ~/Pictures/pics.zip && unzip -d ~/Pictures -o -q ~/Pictures/pics.zip && rm ~/Pictures/pics.zip
 
+
 ##########################
 # handle the tar file
 ###########################
@@ -32,7 +33,7 @@ test -f ~/Pictures/pics.zip && unzip -d ~/Pictures -o -q ~/Pictures/pics.zip && 
 test -f ~/Pictures/pics.tgz || wget -q -O ~/Pictures/pics.tgz http://zonzorp.net/pics.tgz
 
 #unpack the tarfile and remove it if successful
-test -f ~/Pictures/pics.tgz && tar && rm ~/Pictures/pics.tgz
+test -f ~/Pictures/pics.tgz && tar -xvzf  ~/Pictures/pics.tgz && rm ~/Pictures/pics.tgz
 
 
 ####################################
